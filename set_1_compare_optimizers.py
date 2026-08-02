@@ -10,13 +10,11 @@ from adadelta import adadelta
 from rmsprop import rmsprop
 from adam import adam
 
-
 def setup_plot_style():
     pink = "#ff6fa3"
     pink2 = "#ff4f8b"
     gray = "#7f7f7f"
     blue_bg = "#eaf4ff"
-
     plt.rcParams.update({
         "axes.grid": False,
         "axes.facecolor": blue_bg,
@@ -29,8 +27,6 @@ def setup_plot_style():
         "font.size": 11,
     })
     return pink, pink2, gray
-
-
 def contour_plot(ax, xlim, ylim, levels=60):
     xs = np.linspace(xlim[0], xlim[1], 300)
     ys = np.linspace(ylim[0], ylim[1], 300)
@@ -44,8 +40,7 @@ def contour_plot(ax, xlim, ylim, levels=60):
 
     ax.contour(X, Y, Z, levels=levels, cmap="Greys", alpha=0.75)
     return Z
-
-
+    
 def run_and_plot(optimizer_name, optimizer_fn, x0, plot_cfg, ax, line_style):
     xlim = plot_cfg["xlim"]
     ylim = plot_cfg["ylim"]
